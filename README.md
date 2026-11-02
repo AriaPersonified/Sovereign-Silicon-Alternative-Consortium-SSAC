@@ -1,2 +1,2 @@
-# Sovereign-Silicon-Alternative-Consortium-SSAC-.-
-Bilateral strategic framework app for the development of sovereign, zero-water supercomputing infrastructure utilizing advanced materials. Interactive white paper dashboard exploring Graphene, GaN, and Lab-Grown Diamond semiconductor alternatives to silicon. Policy briefing portal and material matrix app. 
+# Sovereign-Silicon-Alternative-Consortium-SSAC
+Bilateral strategic framework app for the development of sovereign, zero-water supercomputing infrastructure utilizing advanced materials. Interactive white paper dashboard exploring Graphene, GaN, and Lab-Grown Diamond semiconductor alternatives to silicon. Silicon Carbide (SiC) and Gallium Oxide (Ga₂O₃) to expand interactive matrix dataset to five materials, and includes smooth state transitions when switching substrates. Policy briefing portal and material matrix app. 
