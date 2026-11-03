@@ -74,6 +74,41 @@
             </div>
         </section>
 
+        <!-- New: Thermal Performance Data Chart Section -->
+        <section class="bg-slate-950 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-4">
+            <div>
+                <h3 class="text-sm font-bold text-white tracking-tight uppercase font-mono text-blue-400">📊 Thermal Performance Comparison</h3>
+                <p class="text-xs text-slate-400">Max Thermal Conductivity comparison (measured in W/mK) relative to standard Silicon (150 W/mK).</p>
+            </div>
+            <div class="space-y-3 pt-2">
+                <!-- Chart Bar 1: Graphene -->
+                <div class="space-y-1">
+                    <div class="flex justify-between text-xs font-mono"><span class="text-slate-300">Graphene Matrix</span><span class="text-emerald-400 font-bold">4,000 W/mK</span></div>
+                    <div class="w-full bg-slate-900 rounded-full h-2.5 border border-slate-800"><div class="bg-gradient-to-r from-emerald-500 to-teal-400 h-2 rounded-full" style="width: 100%"></div></div>
+                </div>
+                <!-- Chart Bar 2: Diamond -->
+                <div class="space-y-1">
+                    <div class="flex justify-between text-xs font-mono"><span class="text-slate-300">Lab-Grown Diamond</span><span class="text-emerald-400 font-bold">2,200 W/mK</span></div>
+                    <div class="w-full bg-slate-900 rounded-full h-2.5 border border-slate-800"><div class="bg-gradient-to-r from-emerald-500 to-blue-500 h-2 rounded-full" style="width: 55%"></div></div>
+                </div>
+                <!-- Chart Bar 3: SiC -->
+                <div class="space-y-1">
+                    <div class="flex justify-between text-xs font-mono"><span class="text-slate-300">Silicon Carbide (SiC)</span><span class="text-blue-400 font-bold">490 W/mK</span></div>
+                    <div class="w-full bg-slate-900 rounded-full h-2.5 border border-slate-800"><div class="bg-blue-500 h-2 rounded-full" style="width: 12.2%"></div></div>
+                </div>
+                <!-- Chart Bar 4: Silicon (Baseline) -->
+                <div class="space-y-1">
+                    <div class="flex justify-between text-xs font-mono"><span class="text-slate-500">Standard Silicon (Baseline)</span><span class="text-slate-500">150 W/mK</span></div>
+                    <div class="w-full bg-slate-900 rounded-full h-2.5 border border-slate-800"><div class="bg-slate-700 h-2 rounded-full" style="width: 3.7%"></div></div>
+                </div>
+                <!-- Chart Bar 5: GaN -->
+                <div class="space-y-1">
+                    <div class="flex justify-between text-xs font-mono"><span class="text-slate-300">Gallium Nitride (GaN)</span><span class="text-amber-400 font-bold">130 W/mK</span></div>
+                    <div class="w-full bg-slate-900 rounded-full h-2.5 border border-slate-800"><div class="bg-amber-500 h-2 rounded-full" style="width: 3.2%"></div></div>
+                </div>
+            </div>
+        </section>
+
         <!-- Main Material Application Interface -->
         <section class="space-y-6">
             <div class="flex items-center gap-2">
@@ -88,35 +123,3 @@
                     <!-- Substrate 01: Diamond -->
                     <button onclick="switchMaterial('diamond')" id="btn-diamond" class="w-full text-left p-4 rounded-xl bg-slate-950 border border-blue-500/40 hover:bg-slate-850 material-card focus:outline-none transition-all cursor-pointer">
                         <div class="flex justify-between items-center mb-1.5">
-                            <span class="text-[10px] font-mono text-blue-400">Substrate 01</span>
-                            <span class="text-[10px] font-mono bg-emerald-500/10 text-emerald-400 px-2 py-0.5 rounded border border-emerald-500/20">Optimal</span>
-                        </div>
-                        <h4 class="font-bold text-white text-sm">Lab-Grown Diamond</h4>
-                        <p class="text-xs text-slate-400 truncate">Ultimate thermal architecture metrics.</p>
-                    </button>
-
-                    <!-- Substrate 02: Graphene -->
-                    <button onclick="switchMaterial('graphene')" id="btn-graphene" class="w-full text-left p-4 rounded-xl bg-slate-800/40 border border-slate-800 hover:bg-slate-850 material-card focus:outline-none transition-all cursor-pointer">
-                        <div class="flex justify-between items-center mb-1.5">
-                            <span class="text-[10px] font-mono text-slate-500">Substrate 02</span>
-                            <span class="text-[10px] font-mono bg-blue-500/10 text-blue-400 px-2 py-0.5 rounded border border-blue-500/20">High Mobility</span>
-                        </div>
-                        <h4 class="font-bold text-slate-300 text-sm">Graphene Matrix</h4>
-                        <p class="text-xs text-slate-400 truncate">2D carbon allotrope crystal lattices.</p>
-                    </button>
-
-                    <!-- Substrate 03: GaN -->
-                    <button onclick="switchMaterial('gan')" id="btn-gan" class="w-full text-left p-4 rounded-xl bg-slate-800/40 border border-slate-800 hover:bg-slate-850 material-card focus:outline-none transition-all cursor-pointer">
-                        <div class="flex justify-between items-center mb-1.5">
-                            <span class="text-[10px] font-mono text-slate-500">Substrate 03</span>
-                            <span class="text-[10px] font-mono bg-amber-500/10 text-amber-400 px-2 py-0.5 rounded border border-amber-500/20">High Power</span>
-                        </div>
-                        <h4 class="font-bold text-slate-300 text-sm">Gallium Nitride (GaN)</h4>
-                        <p class="text-xs text-slate-500 truncate">Wide-bandgap processing limits.</p>
-                    </button>
-
-                    <!-- Substrate 04: Silicon Carbide -->
-                    <button onclick="switchMaterial('sic')" id="btn-sic" class="w-full text-left p-4 rounded-xl bg-slate-800/40 border border-slate-800 hover:bg-slate-850 material-card focus:outline-none transition-all cursor-pointer">
-                        <div class="flex justify-between items-center mb-1.5">
-                            <span class="text-[10px] font-mono text-slate-500">Substrate 04</span>
-                            <span class="text-[10px] font-mono bg-purple-500/10 text-purple-400 px-2 py-0.5 rounded border border-purple-500/20">Extreme Thermal</span>
