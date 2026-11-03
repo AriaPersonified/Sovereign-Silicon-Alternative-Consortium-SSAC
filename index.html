@@ -7,12 +7,13 @@
     <script src="https://jsdelivr.net"></script>
     <style>
         .material-card { transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); }
-        .material-card:hover { transform: translateY(-2px); }
+        .material-card:hover { transform: translateY(-2px); box-shadow: 0 0 20px rgba(59, 130, 246, 0.15); }
         .fade-in { animation: fadeIn 0.3s ease-in-out forwards; }
         @keyframes fadeIn {
             from { opacity: 0; transform: translateY(4px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        .glow-effect { box-shadow: 0 0 30px rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.2); }
     </style>
 </head>
 <body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col justify-between antialiased">
@@ -38,14 +39,20 @@
     <main class="max-w-6xl mx-auto px-4 py-8 flex-grow w-full space-y-8">
         
         <!-- Strategic Hero Framework Briefing -->
-        <section class="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 p-6 rounded-2xl border border-slate-800/80 shadow-2xl relative overflow-hidden">
+        <section class="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 p-6 rounded-2xl border border-slate-800/80 shadow-2xl relative overflow-hidden glow-effect">
             <div class="absolute -right-16 -top-16 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
-            <div class="max-w-3xl relative z-10">
+            <div class="max-w-3xl relative z-10 space-y-4">
                 <span class="text-[10px] font-mono font-semibold bg-blue-500/10 text-blue-400 px-2.5 py-1 rounded-md uppercase tracking-widest border border-blue-500/20">Strategic Framework</span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold mt-4 mb-3 text-white tracking-tight">Sovereign Supercomputing Infrastructure</h2>
+                <h2 class="text-2xl sm:text-3xl font-extrabold mt-2 text-white tracking-tight">Sovereign Supercomputing Infrastructure</h2>
                 <p class="text-slate-400 text-sm leading-relaxed">
                     Bilateral strategic framework app for the development of sovereign, zero-water supercomputing infrastructure utilizing advanced materials. Interactive white paper dashboard exploring Graphene, GaN, and Lab-Grown Diamond semiconductor alternatives to silicon. Policy briefing portal and material matrix app.
                 </p>
+                <!-- New PDF Download Trigger Link -->
+                <div class="pt-2">
+                    <a href="SSAC_Technical_Brief.pdf" download class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-mono text-xs font-bold px-4 py-2.5 rounded-lg shadow-lg shadow-blue-500/10 transition-all focus:ring-2 focus:ring-blue-400">
+                        📥 Download Framework Briefing (PDF)
+                    </a>
+                </div>
             </div>
         </section>
 
@@ -74,34 +81,29 @@
             </div>
         </section>
 
-        <!-- New: Thermal Performance Data Chart Section -->
+        <!-- Thermal Performance Data Chart Section -->
         <section class="bg-slate-950 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-4">
             <div>
                 <h3 class="text-sm font-bold text-white tracking-tight uppercase font-mono text-blue-400">📊 Thermal Performance Comparison</h3>
                 <p class="text-xs text-slate-400">Max Thermal Conductivity comparison (measured in W/mK) relative to standard Silicon (150 W/mK).</p>
             </div>
             <div class="space-y-3 pt-2">
-                <!-- Chart Bar 1: Graphene -->
                 <div class="space-y-1">
                     <div class="flex justify-between text-xs font-mono"><span class="text-slate-300">Graphene Matrix</span><span class="text-emerald-400 font-bold">4,000 W/mK</span></div>
                     <div class="w-full bg-slate-900 rounded-full h-2.5 border border-slate-800"><div class="bg-gradient-to-r from-emerald-500 to-teal-400 h-2 rounded-full" style="width: 100%"></div></div>
                 </div>
-                <!-- Chart Bar 2: Diamond -->
                 <div class="space-y-1">
                     <div class="flex justify-between text-xs font-mono"><span class="text-slate-300">Lab-Grown Diamond</span><span class="text-emerald-400 font-bold">2,200 W/mK</span></div>
                     <div class="w-full bg-slate-900 rounded-full h-2.5 border border-slate-800"><div class="bg-gradient-to-r from-emerald-500 to-blue-500 h-2 rounded-full" style="width: 55%"></div></div>
                 </div>
-                <!-- Chart Bar 3: SiC -->
                 <div class="space-y-1">
                     <div class="flex justify-between text-xs font-mono"><span class="text-slate-300">Silicon Carbide (SiC)</span><span class="text-blue-400 font-bold">490 W/mK</span></div>
                     <div class="w-full bg-slate-900 rounded-full h-2.5 border border-slate-800"><div class="bg-blue-500 h-2 rounded-full" style="width: 12.2%"></div></div>
                 </div>
-                <!-- Chart Bar 4: Silicon (Baseline) -->
                 <div class="space-y-1">
                     <div class="flex justify-between text-xs font-mono"><span class="text-slate-500">Standard Silicon (Baseline)</span><span class="text-slate-500">150 W/mK</span></div>
                     <div class="w-full bg-slate-900 rounded-full h-2.5 border border-slate-800"><div class="bg-slate-700 h-2 rounded-full" style="width: 3.7%"></div></div>
                 </div>
-                <!-- Chart Bar 5: GaN -->
                 <div class="space-y-1">
                     <div class="flex justify-between text-xs font-mono"><span class="text-slate-300">Gallium Nitride (GaN)</span><span class="text-amber-400 font-bold">130 W/mK</span></div>
                     <div class="w-full bg-slate-900 rounded-full h-2.5 border border-slate-800"><div class="bg-amber-500 h-2 rounded-full" style="width: 3.2%"></div></div>
@@ -117,9 +119,4 @@
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
                 
-                <!-- Left Hand Navigation Sidebar (Substrates List) -->
-                <div class="space-y-3 md:col-span-1 max-h-[550px] overflow-y-auto pr-1">
-                    
-                    <!-- Substrate 01: Diamond -->
-                    <button onclick="switchMaterial('diamond')" id="btn-diamond" class="w-full text-left p-4 rounded-xl bg-slate-950 border border-blue-500/40 hover:bg-slate-850 material-card focus:outline-none transition-all cursor-pointer">
-                        <div class="flex justify-between items-center mb-1.5">
+                <!-- Left Hand Navigation Sidebar -->
