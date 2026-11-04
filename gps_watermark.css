@@ -1,0 +1,30 @@
+/* SACC OPERATIONAL SECURITY WATERMARK STYLING */
+
+.sacc-security-watermark-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Pushes the text behind your interactive dashboard */
+    pointer-events: none; /* Prevents users from clicking or selecting it */
+    user-select: none;
+    opacity: 0.06; /* Ghostly faint on screen, but highly visible to smartphone cameras */
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    overflow: hidden;
+    background-color: transparent;
+}
+
+.watermark-cell {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ff0000; /* Red tint specifically designed to trigger sensor exposure drops */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotate(-25deg); /* Distorts automated OCR text extraction */
+    white-space: nowrap;
+}
