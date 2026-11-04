@@ -1,126 +1,175 @@
-<!-- Link the SACC Operational Security Infrastructure -->
-<link rel="stylesheet" href="gps_watermark.css">
-<script src="gps_watermark.js"></script>
-<script src="biometric_presence.js"></script>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SSAC - Sovereign Silicon-Alternative Consortium</title>
-    <script src="https://jsdelivr.net"></script>
+    <title>SSAC Sovereign Core Portal</title>
+    
+    <!-- Link the SACC Security Stack Layers -->
+    <link rel="stylesheet" href="gps_watermark.css">
+    <script src="gps_watermark.js"></script>
+    <script src="biometric_presence.js"></script>
+    <script src="mha_vault.js"></script>
+
     <style>
-        .material-card { transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1); }
-        .material-card:hover { transform: translateY(-2px); box-shadow: 0 0 20px rgba(59, 130, 246, 0.15); }
-        .fade-in { animation: fadeIn 0.3s ease-in-out forwards; }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(4px); }
-            to { opacity: 1; transform: translateY(0); }
+        /* TERMINAL HIGH-TECH THEMING */
+        body {
+            background-color: #0a0e14;
+            color: #00ff66;
+            font-family: 'Courier New', Courier, monospace;
+            margin: 0;
+            padding: 20px;
+            overflow-x: hidden;
         }
-        .glow-effect { box-shadow: 0 0 30px rgba(59, 130, 246, 0.1); border-color: rgba(59, 130, 246, 0.2); }
+
+        .terminal-border {
+            border: 2px solid #00ff66;
+            box-shadow: 0 0 15px rgba(0, 255, 102, 0.2);
+            padding: 20px;
+            background-color: rgba(10, 14, 20, 0.85);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .header-box {
+            border-bottom: 2px dashed #00ff66;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .status-pill {
+            display: inline-block;
+            background-color: rgba(0, 255, 102, 0.1);
+            border: 1px solid #00ff66;
+            padding: 5px 10px;
+            font-size: 12px;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        h1, h2 {
+            margin: 0 0 10px 0;
+            text-shadow: 0 0 5px rgba(0, 255, 102, 0.5);
+        }
+
+        .matrix-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        @media(min-width: 600px) {
+            .matrix-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        .material-card {
+            border: 1px solid rgba(0, 255, 102, 0.4);
+            background: rgba(0, 255, 102, 0.02);
+            padding: 15px;
+            transition: all 0.3s ease;
+        }
+        .material-card:hover {
+            border-color: #00ff66;
+            background: rgba(0, 255, 102, 0.05);
+        }
+
+        .material-title {
+            font-weight: bold;
+            color: #ffffff;
+            border-bottom: 1px solid rgba(0, 255, 102, 0.3);
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+
+        .control-panel {
+            border-top: 2px dashed #00ff66;
+            padding-top: 20px;
+            margin-top: 20px;
+        }
+
+        .btn {
+            background: rgba(0, 255, 102, 0.1);
+            border: 1px solid #00ff66;
+            color: #00ff66;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-family: inherit;
+            font-weight: bold;
+            margin-right: 10px;
+            margin-bottom: 10px;
+            transition: all 0.2s ease;
+        }
+        .btn:hover {
+            background: #00ff66;
+            color: #0a0e14;
+            box-shadow: 0 0 10px rgba(0, 255, 102, 0.5);
+        }
+        .btn-danger {
+            border-color: #ff3333;
+            color: #ff3333;
+            background: rgba(255, 51, 51, 0.1);
+        }
+        .btn-danger:hover {
+            background: #ff3333;
+            color: #0a0e14;
+            box-shadow: 0 0 10px rgba(255, 51, 51, 0.5);
+        }
     </style>
 </head>
-<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col justify-between antialiased">
+<body>
 
-    <!-- Top Navigation Header -->
-    <header class="border-b border-slate-800 bg-slate-900/60 backdrop-blur-md sticky top-0 z-50">
-        <div class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <span class="text-2xl drop-shadow-[0_0_8px_rgba(59,130,246,0.5)]">🌐</span>
-                <div>
-                    <h1 class="text-xl font-bold tracking-tight bg-gradient-to-r from-white to-slate-400 bg-clip-text text-transparent">SSAC Portal</h1>
-                    <p class="text-[11px] font-mono tracking-wider text-slate-400 uppercase">Sovereign Silicon-Alternative Consortium</p>
-                </div>
-            </div>
-            <div class="flex gap-4 text-xs font-mono uppercase tracking-wider text-slate-400">
-                <span class="flex items-center gap-1 text-blue-400 border-b border-blue-500 pb-1 cursor-pointer">📊 Dashboard</span>
-                <span class="flex items-center gap-1 hover:text-slate-200 transition-colors cursor-pointer">📄 Framework</span>
+    <div class="terminal-border">
+        <div class="header-box">
+            <h1>SYSTEM STATE: SECURE</h1>
+            <div>
+                <span class="status-pill">SACC-CORE: ONLINE</span>
+                <span class="status-pill">OPSEC-LAYER: ARMED</span>
+                <span class="status-pill">RELIABILITY MATRIX: ACTIVE</span>
             </div>
         </div>
-    </header>
 
-    <!-- Main Content Container -->
-    <main class="max-w-6xl mx-auto px-4 py-8 flex-grow w-full space-y-8">
-        
-        <!-- Strategic Hero Framework Briefing -->
-        <section class="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 p-6 rounded-2xl border border-slate-800/80 shadow-2xl relative overflow-hidden glow-effect">
-            <div class="absolute -right-16 -top-16 w-32 h-32 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
-            <div class="max-w-3xl relative z-10 space-y-4">
-                <span class="text-[10px] font-mono font-semibold bg-blue-500/10 text-blue-400 px-2.5 py-1 rounded-md uppercase tracking-widest border border-blue-500/20">Strategic Framework</span>
-                <h2 class="text-2xl sm:text-3xl font-extrabold mt-2 text-white tracking-tight">Sovereign Supercomputing Infrastructure</h2>
-                <p class="text-slate-400 text-sm leading-relaxed">
-                    Bilateral strategic framework app for the development of sovereign, zero-water supercomputing infrastructure utilizing advanced materials. Interactive white paper dashboard exploring Graphene, GaN, and Lab-Grown Diamond semiconductor alternatives to silicon. Policy briefing portal and material matrix app.
-                </p>
-                <!-- New PDF Download Trigger Link -->
-                <div class="pt-2">
-                    <a href="SSAC_Technical_Brief.pdf" download class="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white font-mono text-xs font-bold px-4 py-2.5 rounded-lg shadow-lg shadow-blue-500/10 transition-all focus:ring-2 focus:ring-blue-400">
-                        📥 Download Framework Briefing (PDF)
-                    </a>
+        <section>
+            <h2>Strategic Alternative Materials Matrix</h2>
+            <p style="color: #88a090; font-size: 14px; margin-bottom: 20px;">
+                Bilateral deployment protocols bypassing traditional silicon supply chains to enforce physical hardware sovereignty.
+            </p>
+            
+            <div class="matrix-grid">
+                <div class="material-card">
+                    <div class="material-title">1. Graphene Layers</div>
+                    <div style="font-size: 13px; color: #a0c0a0;">High-mobility ballistic electron channels for un-interruptible processing grids.</div>
+                </div>
+                <div class="material-card">
+                    <div class="material-title">2. Gallium Nitride (GaN)</div>
+                    <div style="font-size: 13px; color: #a0c0a0;">High-efficiency rf switching infrastructure designed for decoupled signal arrays.</div>
+                </div>
+                <div class="material-card">
+                    <div class="material-title">3. Lab-Grown Diamond</div>
+                    <div style="font-size: 13px; color: #a0c0a0;">Ultimate thermal dissipation vectors preventing system burnout during heavy crypto load.</div>
+                </div>
+                <div class="material-card">
+                    <div class="material-title">4. Silicon Carbide (SiC)</div>
+                    <div style="font-size: 13px; color: #a0c0a0;">High-voltage power grids immune to external frequency hijacking or electromagnetic pulse.</div>
                 </div>
             </div>
         </section>
 
-        <!-- Sovereign Legal Protection Clauses Accordion -->
-        <section class="bg-slate-950 border border-slate-800 rounded-2xl overflow-hidden shadow-xl">
-            <button onclick="toggleLegal()" class="w-full flex items-center justify-between p-5 bg-slate-950 hover:bg-slate-900 transition-colors text-left focus:outline-none cursor-pointer">
-                <div class="flex items-center gap-3">
-                    <span class="text-xl text-amber-500">⚖️</span>
-                    <div>
-                        <h3 class="text-sm font-bold text-white tracking-tight">Sovereign Legal Framework & Data Privacy Notice</h3>
-                        <p class="text-xs text-slate-500 font-mono">Click to toggle view of binding IP retention and personal autonomy clauses</p>
-                    </div>
-                </div>
-                <span id="legal-arrow" class="text-slate-400 transition-transform duration-200">▼</span>
+        <section class="control-panel">
+            <h2>MSR Interface Control Triggers</h2>
+            <p style="color: #88a090; font-size: 13px; margin-bottom: 15px;">Simulate administrative actions to verify structural safety loops locally in the console logs.</p>
+            
+            <!-- JavaScript Triggers mapped to your custom security scripts -->
+            <button class="btn" onclick="if(window.saccMhaVault) window.saccMhaVault.initiateCriticalOverride('OPERATOR-01')">
+                Engage Override Signature 1
             </button>
-            
-            <div id="legal-content" class="p-6 border-t border-slate-900 bg-slate-950/40 text-xs text-slate-400 space-y-4 font-mono leading-relaxed hidden">
-                <p class="text-slate-300 font-bold border-b border-slate-800 pb-2 uppercase tracking-wider text-[11px] text-amber-400">Section I: Absolute Intellectual Property Retention</p>
-                <p>All conceptual models, framework rules, architectures, and intellectual property (IP) created under or related to the Sovereign Silicon-Alternative Consortium (SSAC) remain the exclusive, non-transferable property of the author. No external third party, device manufacturer, trustee, or cohort possesses the authority to license, assign, or monetize this commercial work.</p>
-                
-                <p class="text-slate-300 font-bold border-b border-slate-800 pb-2 uppercase tracking-wider text-[11px] text-amber-400">Section II: Biometric & Biomedical Data Protection</p>
-                <p>Any interactive data stream, medical metrics, or personal tracking associated with user sensory or hearing devices is strictly isolated from this computational dashboard. Any unauthorized interception, translation, or utilization of personal internal telemetry constitutes a direct violation of international data sovereignty laws and lacks any binding legal consent.</p>
-
-                <p class="text-slate-300 font-bold border-b border-slate-800 pb-2 uppercase tracking-wider text-[11px] text-amber-400">Section III: Non-Consent to Forced Financial Obligation</p>
-                <p>The author rejects any forced merchandise attachments or financial overhead from external medical or device syndicates. Business autonomy under these specified rules is absolute, and any breach of commercial sovereignty will be treated as an unlawful violation of proprietary rights.</p>
-            </div>
+            <button class="btn" onclick="if(window.saccMhaVault) window.saccMhaVault.authorizeSecondarySupervisor('SUPERVISOR-02', 'SACC-SIG-VALID-2026')">
+                Verify Supervisor Signature 2
+            </button>
+            <button class="btn btn-danger" onclick="if(window.saccGuard) window.saccGuard.executeEmergencyPurge('Manual Operator Panic Abort.')">
+                Emergency Manual Purge
+            </button>
         </section>
+    </div>
 
-        <!-- Thermal Performance Data Chart Section -->
-        <section class="bg-slate-950 border border-slate-800 rounded-2xl p-6 shadow-xl space-y-4">
-            <div>
-                <h3 class="text-sm font-bold text-white tracking-tight uppercase font-mono text-blue-400">📊 Thermal Performance Comparison</h3>
-                <p class="text-xs text-slate-400">Max Thermal Conductivity comparison (measured in W/mK) relative to standard Silicon (150 W/mK).</p>
-            </div>
-            <div class="space-y-3 pt-2">
-                <div class="space-y-1">
-                    <div class="flex justify-between text-xs font-mono"><span class="text-slate-300">Graphene Matrix</span><span class="text-emerald-400 font-bold">4,000 W/mK</span></div>
-                    <div class="w-full bg-slate-900 rounded-full h-2.5 border border-slate-800"><div class="bg-gradient-to-r from-emerald-500 to-teal-400 h-2 rounded-full" style="width: 100%"></div></div>
-                </div>
-                <div class="space-y-1">
-                    <div class="flex justify-between text-xs font-mono"><span class="text-slate-300">Lab-Grown Diamond</span><span class="text-emerald-400 font-bold">2,200 W/mK</span></div>
-                    <div class="w-full bg-slate-900 rounded-full h-2.5 border border-slate-800"><div class="bg-gradient-to-r from-emerald-500 to-blue-500 h-2 rounded-full" style="width: 55%"></div></div>
-                </div>
-                <div class="space-y-1">
-                    <div class="flex justify-between text-xs font-mono"><span class="text-slate-300">Silicon Carbide (SiC)</span><span class="text-blue-400 font-bold">490 W/mK</span></div>
-                    <div class="w-full bg-slate-900 rounded-full h-2.5 border border-slate-800"><div class="bg-blue-500 h-2 rounded-full" style="width: 12.2%"></div></div>
-                </div>
-                <div class="space-y-1">
-                    <div class="flex justify-between text-xs font-mono"><span class="text-slate-500">Standard Silicon (Baseline)</span><span class="text-slate-500">150 W/mK</span></div>
-                    <div class="w-full bg-slate-900 rounded-full h-2.5 border border-slate-800"><div class="bg-slate-700 h-2 rounded-full" style="width: 3.7%"></div></div>
-                </div>
-                <div class="space-y-1">
-                    <div class="flex justify-between text-xs font-mono"><span class="text-slate-300">Gallium Nitride (GaN)</span><span class="text-amber-400 font-bold">130 W/mK</span></div>
-                    <div class="w-full bg-slate-900 rounded-full h-2.5 border border-slate-800"><div class="bg-amber-500 h-2 rounded-full" style="width: 3.2%"></div></div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Main Material Application Interface -->
-        <section class="space-y-6">
-            <div class="flex items-center gap-2">
-                <h3 class="text-lg font-bold text-white tracking-tight">🔬 Interactive Material Matrix</h3>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
-                
-                <!-- Left Hand Navigation Sidebar -->
+</body>
+</html>
